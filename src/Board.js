@@ -35,6 +35,10 @@ class Board extends Component {
     super(props);
 
     // TODO: set initial state
+    this.state={
+      hasWon:false,
+      board:[],
+    }
   }
 
   /** create a board nrows high/ncols wide, each cell randomly lit or unlit */
