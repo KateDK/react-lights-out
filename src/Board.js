@@ -78,15 +78,23 @@ class Board extends Component {
   /** Render game board or winning message. */
 
   render() {
-    return <h1>Im a board!</h1>
+    return (
 
-    // if the game is won, just show a winning msg & render nothing else
+      // if the game is won, just show a winning msg & render nothing else
 
-    // TODO
+      // TODO
 
-    // make table board
+      // make table board
+      <table>
+        <tbody>
+          <tr>
+            <Cell/>
+          </tr>
+        </tbody>
+      </table>
 
-    // TODO
+      // TODO
+    )
   }
 }
 
