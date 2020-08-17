@@ -31,15 +31,12 @@ import './Board.css';
 
 class Board extends Component {
 
-  constructor(props) {
-    super(props);
-
     // TODO: set initial state
-    this.state={
+    state={
       hasWon:false,
       board:[],
     }
-  }
+
 
   /** create a board nrows high/ncols wide, each cell randomly lit or unlit */
 
