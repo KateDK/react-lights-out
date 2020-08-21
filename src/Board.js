@@ -90,6 +90,9 @@ class Board extends Component {
           <tr>
             <Cell/>
           </tr>
+          <tr>
+            <Cell/>
+          </tr>
         </tbody>
       </table>
 
