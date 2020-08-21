@@ -86,6 +86,7 @@ class Board extends Component {
   /** Render game board or winning message. */
 
   render() {
+    const board = this.createBoard();
     return (
 
       // if the game is won, just show a winning msg & render nothing else
@@ -95,12 +96,15 @@ class Board extends Component {
       // make table board
       <table className='Board'>
         <tbody>
-          <tr>
-            <Cell/>
-          </tr>
-          <tr>
-            <Cell/>
-          </tr>
+          {
+            board.map(row=>{
+              return(
+                <tr>
+                  {row.map(cell=><Cell/>)}
+                </tr>
+              )
+            })
+          }
         </tbody>
       </table>
 
