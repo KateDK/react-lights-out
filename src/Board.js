@@ -97,10 +97,10 @@ class Board extends Component {
       <table className='Board'>
         <tbody>
           {
-            board.map(row=>{
+            board.map((row,rowIndx)=>{
               return(
-                <tr>
-                  {row.map(cell=><Cell/>)}
+                <tr key={rowIndx}>
+                  {row.map((cell,cellIndex)=><Cell key={`${rowIndx}-${cellIndex}`}/>)}
                 </tr>
               )
             })
