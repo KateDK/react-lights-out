@@ -85,7 +85,7 @@ class Board extends Component {
       // TODO
 
       // make table board
-      <table>
+      <table className='Board'>
         <tbody>
           <tr>
             <Cell/>
