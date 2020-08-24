@@ -33,13 +33,13 @@ class Board extends Component {
     static defaultProps = {
       nrows: 5,
       ncols: 5,
-      chanceLightStartsOn:5,
+      chanceLightStartsOn:0.25,
     }
 
     // TODO: set initial state
     state={
       hasWon:false,
-      board:[],
+      board:this.createBoard(),
     }
 
 
@@ -87,7 +87,7 @@ class Board extends Component {
   /** Render game board or winning message. */
 
   render() {
-    const board = this.createBoard();
+    const {board} = this.state;
     return (
 
       // if the game is won, just show a winning msg & render nothing else
