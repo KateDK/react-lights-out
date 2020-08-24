@@ -33,6 +33,7 @@ class Board extends Component {
     static defaultProps = {
       nrows: 5,
       ncols: 5,
+      chanceLightStartsOn:5,
     }
 
     // TODO: set initial state
