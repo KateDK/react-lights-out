@@ -88,6 +88,11 @@ class Board extends Component {
 
   render() {
     const {board} = this.state;
+    const boardBody = board.map((row,rowIndx)=>
+        (<tr key={rowIndx}>
+          {row.map((cell,cellIndex)=><Cell key={`${rowIndx}-${cellIndex}`} isLit={cell}/>)}
+        </tr>));
+
     return (
 
       // if the game is won, just show a winning msg & render nothing else
@@ -97,15 +102,7 @@ class Board extends Component {
       // make table board
       <table className='Board'>
         <tbody>
-          {
-            board.map((row,rowIndx)=>{
-              return(
-                <tr key={rowIndx}>
-                  {row.map((cell,cellIndex)=><Cell key={`${rowIndx}-${cellIndex}`}/>)}
-                </tr>
-              )
-            })
-          }
+          {boardBody}
         </tbody>
       </table>
 
