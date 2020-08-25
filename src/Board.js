@@ -98,7 +98,10 @@ class Board extends Component {
   render() {
     const {board, hasWon} = this.state;
     if(hasWon){
-      return <h1 className="neon-blue">You Win</h1>
+      return <div>
+        <span className="winner neon-orange">You</span>
+         <span className="winner neon-blue">Win</span>
+        </div>
     }
     const boardBody = board.map((row,rowIndx)=>
         (<tr key={rowIndx}>
