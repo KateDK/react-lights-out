@@ -86,13 +86,11 @@ class Board extends Component {
       col = x-1;
     }
 
-
-    // TODO: flip this cell and the cells around it
-
     // win when every cell is turned off
     // TODO: determine is the game has been won
-
-    this.setState({board, /*hasWon*/});
+    const hasWon = board.every(row=>row.every(cell=>!cell));
+    console.log("hasWon: ",hasWon)
+    this.setState({board, hasWon});
   }
 
 
