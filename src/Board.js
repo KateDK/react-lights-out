@@ -96,7 +96,10 @@ class Board extends Component {
   /** Render game board or winning message. */
 
   render() {
-    const {board} = this.state;
+    const {board, hasWon} = this.state;
+    if(hasWon){
+      return <h1>You Win</h1>
+    }
     const boardBody = board.map((row,rowIndx)=>
         (<tr key={rowIndx}>
           {row.map((cell,cellIndex)=>{
@@ -107,8 +110,6 @@ class Board extends Component {
           </tr>));
 
     return (
-      // if the game is won, just show a winning msg & render nothing else
-
       <table className='Board'>
         <tbody>
           {boardBody}
