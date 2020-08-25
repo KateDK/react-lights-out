@@ -98,7 +98,7 @@ class Board extends Component {
   render() {
     const {board, hasWon} = this.state;
     if(hasWon){
-      return <h1>You Win</h1>
+      return <h1 className="neon-blue">You Win</h1>
     }
     const boardBody = board.map((row,rowIndx)=>
         (<tr key={rowIndx}>
@@ -110,11 +110,14 @@ class Board extends Component {
           </tr>));
 
     return (
-      <table className='Board'>
-        <tbody>
-          {boardBody}
-        </tbody>
-      </table>
+      <div>
+        <h1 className="neon-orange Board-title">Lights Out</h1>
+        <table className='Board'>
+          <tbody>
+            {boardBody}
+          </tbody>
+        </table>
+      </div>
     )
   }
 }
