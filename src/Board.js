@@ -90,8 +90,12 @@ class Board extends Component {
     const {board} = this.state;
     const boardBody = board.map((row,rowIndx)=>
         (<tr key={rowIndx}>
-          {row.map((cell,cellIndex)=><Cell key={`${rowIndx}-${cellIndex}`} isLit={cell}/>)}
-        </tr>));
+          {row.map((cell,cellIndex)=>{
+          const coord = `${rowIndx}-${cellIndex}`;
+          return (
+          <Cell key={coord} isLit={cell} flipCellsAroundMe={()=>this.flipCellsAround(coord)}/>
+          )})}
+          </tr>));
 
     return (
 
