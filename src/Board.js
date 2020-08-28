@@ -97,12 +97,6 @@ class Board extends Component {
 
   render() {
     const {board, hasWon} = this.state;
-    if(hasWon){
-      return <div>
-        <span className="winner neon-orange">You</span>
-         <span className="winner neon-blue">Win</span>
-        </div>
-    }
     const boardBody = board.map((row,rowIndx)=>
         (<tr key={rowIndx}>
           {row.map((cell,cellIndex)=>{
@@ -114,16 +108,27 @@ class Board extends Component {
 
     return (
       <div>
-        <div className="Board-title">
-          <div className="neon-orange">Lights</div>
-          <div className="neon-blue">Out</div>
-        </div>
+        {hasWon ? (
+          <div>
+          <span className="winner neon-orange">You</span>
+           <span className="winner neon-blue">Win</span>
+          </div>
+        ): (
+        <div>
+          <div className="Board-title">
+            <div className="neon-orange">Lights</div>
+            <div className="neon-blue">Out</div>
+          </div>
 
-        <table className='Board'>
-          <tbody>
-            {boardBody}
-          </tbody>
-        </table>
+
+          <table className='Board'>
+            <tbody>
+              {boardBody}
+            </tbody>
+          </table>
+        </div>
+        )}
+
       </div>
     )
   }
